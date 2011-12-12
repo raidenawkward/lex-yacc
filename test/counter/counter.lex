@@ -4,7 +4,7 @@
 int wordCount = 0;
 int lineCount = 0;
 %}
-specialBC "bc"
+specialBC "啥"
 chars [A-za-z\_\'\.\";]
 numbers ([0-9])+
 delim [" "\t]
@@ -13,7 +13,7 @@ whitespace {delim}+
 words {chars}+
 %%
 {specialBC} {
-	printf("special bc found\n");
+	printf("special %s found\n",yytext);
 }
 {words} {
 	wordCount++;
